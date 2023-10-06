@@ -43,7 +43,6 @@ fn main() {
     canvas.stroke_path(&path, &paint, &rect_stroke, ts, None);
 
     canvas.save_png("output.png").unwrap();
-
 }
 
 fn sk_paint(stroke: &Pixmap, fill_transform: sk::Transform) -> sk::Paint {
@@ -54,8 +53,7 @@ fn sk_paint(stroke: &Pixmap, fill_transform: sk::Transform) -> sk::Paint {
         sk::SpreadMode::Pad,
         sk::FilterQuality::Nearest,
         1.0,
-        fill_transform
-            .pre_scale(1.0 / 2.0, 1.0 / 2.0),
+        fill_transform.pre_scale(1.0 / 2.0, 1.0 / 2.0),
     );
 
     sk_paint
