@@ -17,7 +17,7 @@ fn main() {
     canvas.fill(sk::Color::WHITE);
 
     // The shape's transform (just centering it)
-    let ts = sk::Transform::from_translate(25.0, 25.0);
+    let ts = sk::Transform::from_translate(25.0, 25.0).post_scale(pixel_per_pt, pixel_per_pt);
 
     // Setup the shape (a simple square for this example)
     let (w, h) = (50.0, 50.0);
